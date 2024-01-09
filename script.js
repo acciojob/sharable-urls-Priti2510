@@ -1,11 +1,8 @@
 // your code here
-document.getElementById('myForm').addEventListener('submit', function(event) {
- event.preventDefault();
+function updateURL() {
+            var nameValue = document.getElementById("name").value;
+            var yearValue = document.getElementById("year").value;
+            var updatedURL = "https://localhost:8080/?name=" + encodeURIComponent(nameValue) + "&year=" + encodeURIComponent(yearValue);
 
- var name = document.getElementById('name').value;
- var year = document.getElementById('year').value;
-
- var url = 'https://localhost:8080/?name=' + encodeURIComponent(name) + '&year=' + encodeURIComponent(year);
-
- document.getElementById('url').textContent = url;
-});
+            document.getElementById("url").textContent = updatedURL;
+        }
